@@ -1,10 +1,10 @@
+# napalm_extensions
 # Introduction
 
 extensions to the IOS napalm driver to do some useful things
 
 Requires `napalm` module.
 
-See [getting started for details](#getting-started).
 
 # Usage
 
@@ -16,8 +16,8 @@ driver = napalm.get_network_driver("ios")
 device = driver('your_hostname', 'your_username', 'your_password', optional_args={'transport': 'ssh', 'secret': 'your_enable_secret'})
 device.open()
 
-cdp_neighbours = device.<function> (See: function list for details](#function_list).
-print(json.dumps(cdp_neighbours,indent=4))
+return_var = device.<function> (See: function list for details](#function_list).
+print(json.dumps(return_var,indent=4))
 ```
 
 #function_list
@@ -33,7 +33,7 @@ Gets a list of CDP neighbours from the device, returns a dict with full interfac
 <device_driver_var>.getCDPNeighbours()
 ```
 #### Sample Output
-
+```
 {
     "count": 2,
     "neighbours": {
