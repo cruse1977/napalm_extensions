@@ -16,7 +16,7 @@ class CustomIOSDriver(IOSDriver):
         """Returns a list of CDP Neighbours by parsing the cli command: show cdp neighbours"""
         output = self._send_command('show cdp neigh')
 
-        re_cmd_cdp_1 = re.compile("(([a-zA-Z0-9\-\_\.]+)[\s\t\r\n]+(Gig|Ten|Po)[\s\t]+([0-9\/]+)[\s\t]+([0-9]+)[\s\t]+([RSI\s]+)[\s\t]+([^ ]+)[\s\t]+(Gig|Fas|Ten|vmnic)[\s\t]+([0-9\/]+)[\n]+)")
+        re_cmd_cdp_1 = re.compile("(([a-zA-Z0-9\-\_\.]+)[\s\t\r\n]+(Fas|Gig|Ten|Po)[\s\t]+([0-9\/]+)[\s\t]+([0-9]+)[\s\t]+([RSI\s]+)[\s\t]+([^ ]+)[\s\t]+(Gig|Fas|Ten|vmnic)[\s\t]+([0-9\/]+)[\n]+)")
         t = re.findall(re_cmd_cdp_1,output)
         #print(json.dumps(t,indent=4))
         if t != None:
